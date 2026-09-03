@@ -1,0 +1,92 @@
+/* Fondo y tipografía general */
+.navbar-main {
+    background-color: #000000 !important;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Marca / Logo con fuente Orbitron */
+.brand-futuristic {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #FFFFFF !important;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5); /* Sutil brillo azul */
+}
+
+/* Enlaces de navegación */
+.navbar-main .nav-link {
+    color: #D3D3D3 !important; /* Texto secundario */
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.navbar-main .nav-link:hover,
+.navbar-main .nav-link.active {
+    color: #1E90FF !important; /* Acento Azul Eléctrico */
+    text-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.navbar-main .nav-link.disabled {
+    color: #555555 !important;
+}
+
+/* Dropdown */
+.navbar-main .dropdown-menu {
+    background-color: #0d0d0d;
+    border: 1px solid #1E90FF;
+}
+
+.navbar-main .dropdown-item {
+    color: #D3D3D3;
+}
+
+.navbar-main .dropdown-item:hover {
+    background-color: rgba(30, 144, 255, 0.15);
+    color: #FFFFFF;
+}
+
+.navbar-main .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Campo de búsqueda */
+.custom-input {
+    background-color: #121212;
+    border: 1px solid #333333;
+    color: #FFFFFF;
+}
+
+.custom-input::placeholder {
+    color: #D3D3D3;
+    opacity: 0.6;
+}
+
+.custom-input:focus {
+    background-color: #121212;
+    color: #FFFFFF;
+    border-color: #1E90FF;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+}
+
+/* Botón Verde Neón */
+.btn-neon {
+    color: #39FF14;
+    border: 1px solid #39FF14;
+    background-color: transparent;
+    font-weight: 500;
+    transition: all 0.25s ease-in-out;
+}
+
+.btn-neon:hover {
+    background-color: #39FF14;
+    color: #000000;
+    box-shadow: 0 0 12px #39FF14;
+}
+
+/* Ícono del menú hamburguesa */
+.navbar-toggler {
+    border-color: #1E90FF;
+}
+
+
