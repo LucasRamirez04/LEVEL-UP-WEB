@@ -18,47 +18,132 @@
 </head>
 
 <body>
-    <header></header>
-    <main>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nombre Completo</span>
-            <input type="text" class="form-control" placeholder="Ingrese Nombre Completo" aria-label="Username"
-                aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Correo@</span>
-            <input type="text" class="form-control" placeholder="Example@.com" aria-label="Correo"
-                aria-describedby="inputGroup-sizing-default">
-        </div>
+    <!-- NAVDAR DE LA PAGINA -->
+    <header>class="cabecera-principal">
+        <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
+            <div class="container-fluid">
 
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">Contraseña</label>
-            </div>
-            <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
-                </span>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-            <select class="form-select" id="specificSizeSelect">
-                <option selected>--Seleccione la Region--</option>
-                <option value="1">Region Metropolitana</option>
-                <option value="2">Region de los Lagos</option>
-                <option value="3">Region de la Araucania</option>
-            </select>
-        </div>
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/LOGO.png" alt="Logo Level-Up Gamer" class="logo-navbar">
+                </a>
 
-        <button type="button" class="btn btn-primary"
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            Registrar
-        </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active enlace-menu" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle enlace-menu" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu caja-desplegable">
+                                <li><a class="dropdown-item item-desplegable" href="#">Juegos de Mesa</a></li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Accesorios</a></li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Consola/Computadores</a></li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Perisfericos</a></li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Vestuario</a></li>
+                                <li>
+                                    <hr class="dropdown-divider linea-divisoria">
+                                </li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Ver todos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="Comunidad.html">Comunidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="#">Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5 pt-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <h2 class="text-center text-white" style="font-family: 'Orbitron', sans-serif;"> REGISTRO DE USUARIO
+                </h2>
+    
+                <!-- REGISTRO DE USUARIO -->
+                <form id="formularioRegistro" novalidate>
+    
+                    <div class="mb-3">
+                        <label for="run" class="form-label">RUT</label>
+                        <input type="text" class="form-control" id="run" placeholder="Ingrese su RUT sin punto ni guion"
+                            required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Ej: usuario@.cl/com" required>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento">
+                    </div>
+    
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <label for="region" class="form-label">Región</label>
+                            <select class="form-select" id="region" required>
+                                <option value="" selected>-- Seleccione la Región --</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="comuna" class="form-label">Comuna</label>
+                            <select class="form-select" id="comuna" required>
+                                <option value="" selected>-- Seleccione la Comuna --</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="mb-4">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion"
+                            required>
+                    </div>
+    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary" style="font-family: 'Orbitron', sans-serif;">Registrar Cuenta</button>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
     </main>
+
 
     <!-- ================================================================ -->
     <!-- ==== FOOTER ==== -->
