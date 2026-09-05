@@ -3,48 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMER</title>
+    <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap" >
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+z|
 </head>
 <body>
-<header class="header">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-main">
+
+
+
+
+<header class="cabecera-principal">
+    <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand brand-futuristic" href="#">LEVEL UP GAMER</a>
+            
+            <!-- Logo / Marca con fuente Orbitron -->
+            <a class="navbar-brand logo-texto-sitio" href="#">MiWebGamer</a>
+            
+            <!-- Botón para celulares -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Contenido que se esconde en pantallas chicas -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link  enlace-menu" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link enlace-menu" href="#">Juegos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link enlace-menu" href="Comunidad.html">Comunidad</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                        <a class="nav-link dropdown-toggle enlace-menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu caja-desplegable">
+                            <li><a class="dropdown-item item-desplegable" href="#">Juegos de Mesa</a></li>
+                            <li><a class="dropdown-item item-desplegable" href="#">Accesorios</a></li>
+                            <li><a class="dropdown-item item-desplegable" href="#">Perisfericos</a></li>
+                            <li><a class="dropdown-item item-desplegable" href="#">Vestuario</a></li>
+                            <li><hr class="dropdown-divider linea-divisoria"></li>
+                            <li><a class="dropdown-item item-desplegable" href="#">Ver todos</a></li>
                         </ul>
                     </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link " >Disabled</a>
+                        <a class="nav-link enlace-menu enlace-login" href="login.html">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link enlace-menu enlace-login" href="registro.html">Registrarse</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 custom-input" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-neon" type="submit">Search</button>
-                </form>
+            
+                
             </div>
         </div>
     </nav>
@@ -60,6 +83,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src = "script.js"></script>
+    <script src = "js/index.js"></script>
 </body>
 </html>

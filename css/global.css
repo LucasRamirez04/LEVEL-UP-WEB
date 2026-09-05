@@ -1,92 +1,178 @@
-/* Fondo y tipografía general */
-.navbar-main {
-    background-color: #000000 !important;
+/* ===================================================
+   HOJA DE ESTILOS GLOBAL (global.css)
+   =================================================== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
     font-family: 'Roboto', sans-serif;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
 }
 
-/* Marca / Logo con fuente Orbitron */
-.brand-futuristic {
+/* Espacio superior para compensar el navbar con fixed-top */
+.contenedor-principal {
+    padding-top: 85px;
+}
+
+/* 2. Barra de Navegación */
+.barra-navegacion-gamer {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Logo de imagen */
+.logo-navbar {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Logo en texto (opcional si no se usa imagen) */
+.logo-texto-sitio {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #FFFFFF !important;
-    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5); /* Sutil brillo azul */
 }
 
-/* Enlaces de navegación */
-.navbar-main .nav-link {
-    color: #D3D3D3 !important; /* Texto secundario */
-    transition: color 0.2s ease, text-shadow 0.2s ease;
+/* Enlaces regulares del menú */
+.enlace-menu {
+    color: #D3D3D3 !important;
+    transition: color 0.15s ease-in-out;
 }
 
-.navbar-main .nav-link:hover,
-.navbar-main .nav-link.active {
-    color: #1E90FF !important; /* Acento Azul Eléctrico */
-    text-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+.enlace-menu:hover,
+.enlace-menu.active {
+    color: #39FF14 !important;
 }
 
-.navbar-main .nav-link.disabled {
-    color: #555555 !important;
+/* Botón de Iniciar Sesión y Registro */
+.enlace-login {
+    color: #39FF14 !important;
+    border: 1px solid #39FF14;
+    border-radius: 6px;
+    padding: 6px 14px !important;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-/* Dropdown */
-.navbar-main .dropdown-menu {
+.enlace-login:hover {
+    background-color: #39FF14;
+    color: #000000 !important;
+}
+
+/* Botón de alternancia para móviles */
+.navbar-toggler {
+    border-color: #39FF14;
+}
+
+/* 3. Menú Desplegable (Dropdown) */
+.caja-desplegable {
     background-color: #0d0d0d;
-    border: 1px solid #1E90FF;
+    border: 1px solid #39FF14;
+    border-radius: 6px;
+    padding: 4px 0;
 }
 
-.navbar-main .dropdown-item {
+.item-desplegable {
     color: #D3D3D3;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-.navbar-main .dropdown-item:hover {
-    background-color: rgba(30, 144, 255, 0.15);
-    color: #FFFFFF;
+.item-desplegable:hover {
+    background-color: #1a1a1a;
+    color: #39FF14;
 }
 
-.navbar-main .dropdown-divider {
-    border-color: rgba(255, 255, 255, 0.15);
+.linea-divisoria {
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    height: 0 !important;
+    margin: 5px 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
 }
 
-/* Campo de búsqueda */
-.custom-input {
-    background-color: #121212;
-    border: 1px solid #333333;
-    color: #FFFFFF;
-}
-
-.custom-input::placeholder {
+/* 4. Carrito de Compras (Botón y Offcanvas) */
+.boton-carrito-nav {
+    background-color: transparent;
     color: #D3D3D3;
-    opacity: 0.6;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-.custom-input:focus {
-    background-color: #121212;
+.boton-carrito-nav:hover {
+    color: #39FF14;
+    border-color: #39FF14;
+}
+
+.badge-contador {
+    background-color: #39FF14;
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.75rem;
+    border-radius: 50%;
+}
+
+.panel-carrito-gamer {
+    background-color: #0d0d0d !important;
+    border-left: 1px solid #39FF14;
     color: #FFFFFF;
-    border-color: #1E90FF;
-    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
 }
 
-/* Botón Verde Neón */
-.btn-neon {
+.titulo-carrito {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+}
+
+.texto-neon-verde {
+    color: #39FF14;
+}
+
+/* 5. Botones Generales de Acción */
+.boton-buscar-neon {
     color: #39FF14;
     border: 1px solid #39FF14;
     background-color: transparent;
     font-weight: 500;
-    transition: all 0.25s ease-in-out;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-.btn-neon:hover {
+.boton-buscar-neon:hover {
     background-color: #39FF14;
     color: #000000;
-    box-shadow: 0 0 12px #39FF14;
 }
 
-/* Ícono del menú hamburguesa */
-.navbar-toggler {
-    border-color: #1E90FF;
+/* 6. Pie de Página (Footer) */
+.pie-pagina-gamer {
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.titulo-pie {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
 
+.texto-pie {
+    color: #D3D3D3;
+    font-size: 0.875rem;
+}
+
+.enlace-pie {
+    color: #D3D3D3 !important;
+    font-size: 0.875rem;
+    transition: color 0.15s ease-in-out;
+}
+
+.enlace-pie:hover {
+    color: #39FF14 !important;
+}

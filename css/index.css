@@ -1,0 +1,11 @@
+.botonAgregar{
+    background-color: transparent;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+    border-radius: 6px;
+}
+.botonAgregar:hover{
+    background-color: #39FF14;
+    color: #212529;
+
+}
