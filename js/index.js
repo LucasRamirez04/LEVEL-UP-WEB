@@ -4,8 +4,8 @@ const inventarioProductos = [
         categoria : "Juegos de Mesa",
         nombre : "Catan",
         precio : 29000,
-        enOferta : false,
-        descuento : 0,
+        enOferta : true,
+        descuento : 30,
         imagen : "img/catan.jpg"
 
     },
@@ -34,7 +34,7 @@ const inventarioProductos = [
         categoria : "Accesorios",
         nombre : "Auriculares Gamer HyperX Cloud II",
         precio : 79990,
-        enOferta : true,
+        enOferta : false,
         descuento : 20,
         imagen : "img/audifonos-hyperx.png"
 
@@ -112,6 +112,7 @@ const ofertasEspeciales = catalogoCompleto.filter(producto => producto.enOferta)
 // 3. Referencia al contenedor
 const contenedor = document.getElementById("contenedor-ofertas");
 
+
 // 4. Renderizado con document.createElement
 ofertasEspeciales.forEach((producto) => {
 
@@ -136,8 +137,10 @@ ofertasEspeciales.forEach((producto) => {
     img.className = "card-img-top";
     img.src = producto.imagen;
     img.alt = producto.nombre;
-    img.style.height = "200px";
-    img.style.objectFit = "cover";
+    img.style.height = "250px";          // Un poco más de altura para apreciar la portada
+    img.style.objectFit = "contain";     // Muestra la imagen completa sin recortar
+    img.style.backgroundColor = "#111"; // Fondo oscuro para rellenar los costados
+    img.style.padding = "10px"; 55
 
     // Cuerpo de la tarjeta
     const cardBody = document.createElement("div");
@@ -148,21 +151,24 @@ ofertasEspeciales.forEach((producto) => {
     titulo.className = "card-title";
     titulo.textContent = producto.nombre;
 
-    // Contenedor de precios
+   // Contenedor de precios
     const bloquePrecios = document.createElement("div");
     bloquePrecios.className = "my-2";
 
-    const precioOriginalCalculado = Math.round(producto.precio / (1 - producto.descuento / 100));
-
+    
+    const precioOriginal = producto.precio;
     const precioTachado = document.createElement("small");
     precioTachado.className = "text-decoration-line-through text-secondary me-2";
-    precioTachado.textContent = `$${precioOriginalCalculado.toLocaleString("es-CL")}`;
+    precioTachado.textContent = `$${precioOriginal.toLocaleString("es-CL")}`;
 
+    
+    const precioRebajado = Math.round(precioOriginal * (1 - producto.descuento / 100));
     const precioFinal = document.createElement("span");
     precioFinal.className = "fw-bold fs-5";
     precioFinal.style.color = "#39FF14";
-    precioFinal.textContent = `$${producto.precio.toLocaleString("es-CL")}`;
+    precioFinal.textContent = `$${precioRebajado.toLocaleString("es-CL")}`;
 
+    // Ensamblar precios
     bloquePrecios.appendChild(precioTachado);
     bloquePrecios.appendChild(precioFinal);
 

@@ -8,7 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -22,9 +24,9 @@
 
 
 
-<!-- ================================================================ -->
-<!-- ==== HEADER ==== -->
-<!-- ================================================================ -->
+    <!-- ================================================================ -->
+    <!-- ==== HEADER ==== -->
+    <!-- ================================================================ -->
     <header class="cabecera-principal">
         <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
             <div class="container-fluid">
@@ -80,7 +82,9 @@
                             <a class="nav-link enlace-menu enlace-login" href="registroUsuario.html">Registrarse</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <button class="btn boton-carrito-nav d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras">
+                            <button class="btn boton-carrito-nav d-flex align-items-center gap-2" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#carritoCompras"
+                                aria-controls="carritoCompras">
                                 <i class="bi bi-cart3"></i>
                                 <span>Carrito</span>
                                 <span class="badge badge-contador">0</span>
@@ -96,67 +100,141 @@
 
 
 
-<!-- ================================================================ -->
-<!-- ==== MAIN ==== -->
-<!-- ================================================================ -->
+    <!-- ================================================================ -->
+    <!-- ==== MAIN ==== -->
+    <!-- ================================================================ -->
 
 
     <main class="flex-grow-1 contenedor-principal">
         <!-- ==== SECCION OFERTAS ESPECIALES ==== -->
         <section id="sec-ofertas"></section>
         <div class="row gy-4 " id="contenedor-ofertas">
-        <!-- cartas creadas en js -->
+            <!-- cartas creadas en js -->
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- ==== SECCION NOSOTROS ==== -->
-        <section>NOSOTROS</section>
+        <section class="seccion-nosotros py-5" id="nosotros">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <!-- Columna Izquierda: Información de la tienda -->
+                    <div class="col-12 col-lg-6">
+                        <span class="badge text-bg-dark border border-success mb-2 px-3 py-2 texto-neon-verde fw-bold">
+                            100% ONLINE • TODO CHILE
+                        </span>
+                        <h2 class="titulo-nosotros mb-3">Sobre Level-Up Gamer</h2>
+
+                        <p class="texto-nosotros">
+                            Nacimos como respuesta a la creciente pasión por los videojuegos en Chile, transformándonos
+                            en una plataforma dedicada exclusivamente a equipar a la comunidad gamer con tecnología y
+                            accesorios de primer nivel.
+                        </p>
+                        <p class="texto-nosotros">
+                            Aunque operamos sin sucursales físicas, conectamos con jugadores de todo el país a través de
+                            envíos rápidos y seguros, llevando lo último en consolas, PC armados, periféricos y
+                            ergonomía directo a tu setup.
+                        </p>
+
+                        <!-- Puntos clave con iconos -->
+                        <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
+                            <li class="d-flex align-items-center gap-3">
+                                <i class="bi bi-truck fs-4 texto-neon-verde"></i>
+                                <span>Despachos garantizados a todas las regiones de Chile.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <i class="bi bi-controller fs-4 texto-neon-verde"></i>
+                                <span>Catálogo seleccionado por y para jugadores.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <i class="bi bi-shield-check fs-4 texto-neon-verde"></i>
+                                <span>Garantía y soporte técnico especializado.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Derecha: Tarjetas de Misión y Visión -->
+                    <div class="col-12 col-lg-6">
+                        <div class="d-flex flex-column gap-4">
+
+                            <!-- Tarjeta Misión -->
+                            <div class="tarjeta-mision-vision p-4 rounded border-secondary">
+                                <div class="d-flex align-items-center gap-3 mb-2">
+                                    <i class="bi bi-bullseye fs-3 texto-neon-verde"></i>
+                                    <h4 class="mb-0 text-white subtitulo-nosotros">Nuestra Misión</h4>
+                                </div>
+                                <p class="mb-0 text-secondary">
+                                    Proporcionar productos de alta calidad para gamers en todo Chile, ofreciendo una
+                                    experiencia de compra única y personalizada, con un enfoque en la satisfacción del
+                                    cliente y el crecimiento de la comunidad gamer.
+                                </p>
+                            </div>
+
+                            <!-- Tarjeta Visión -->
+                            <div class="tarjeta-mision-vision p-4 rounded border-secondary">
+                                <div class="d-flex align-items-center gap-3 mb-2">
+                                    <i class="bi bi-trophy fs-3 texto-neon-verde"></i>
+                                    <h4 class="mb-0 text-white subtitulo-nosotros">Nuestra Visión</h4>
+                                </div>
+                                <p class="mb-0 text-secondary">
+                                    Ser la tienda online líder en productos para gamers en Chile, reconocida por su
+                                    innovación, servicio al cliente excepcional, y un programa de fidelización basado en
+                                    gamificación que recompense a nuestros clientes más fieles.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
 
 
-<!-- ================================================================ -->
-<!-- ==== FOOTER ==== -->
-<!-- ================================================================ -->
+    <!-- ================================================================ -->
+    <!-- ==== FOOTER ==== -->
+    <!-- ================================================================ -->
     <footer class="pie-pagina-gamer py-5 mt-auto" data-bs-theme="dark">
         <div class="container">
             <div class="row gy-4">
 
-          
+
                 <div class="col-12 col-md-4">
                     <h5 class="logo-texto-sitio mb-3">MiWebGamer</h5>
                     <p class="texto-pie">
@@ -164,7 +242,7 @@
                     </p>
                 </div>
 
-         
+
                 <div class="col-6 col-md-2">
                     <h6 class="titulo-pie mb-3">Navegación</h6>
                     <ul class="nav flex-column">
@@ -175,7 +253,7 @@
                     </ul>
                 </div>
 
-    
+
                 <div class="col-6 col-md-2">
                     <h6 class="titulo-pie mb-3">Soporte</h6>
                     <ul class="nav flex-column">
@@ -204,31 +282,33 @@
         </div>
     </footer>
 
-    <div class="offcanvas offcanvas-end panel-carrito-gamer" tabindex="-1" id="carritoCompras" aria-labelledby="carritoLabel">
-    
-  
-    <div class="offcanvas-header border-bottom border-secondary">
-        <h5 class="offcanvas-title titulo-carrito" id="carritoLabel">
-            <i class="bi bi-cart3 me-2"></i>Tu Carrito
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
+    <div class="offcanvas offcanvas-end panel-carrito-gamer" tabindex="-1" id="carritoCompras"
+        aria-labelledby="carritoLabel">
 
-  
-    <div class="offcanvas-body">
-        <p class="texto-pie text-center mt-4">No tienes productos en el carrito.</p>
-    </div>
-
-   
-    <div class="offcanvas-footer p-3 border-top border-secondary">
-        <div class="d-flex justify-content-between mb-3 text-white">
-            <span>Total estimado:</span>
-            <strong class="texto-neon-verde">$0</strong>
+        
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title titulo-carrito" id="carritoLabel">
+                <i class="bi bi-cart3 me-2"></i>Tu Carrito
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
-        <button class="btn boton-buscar-neon w-100 py-2">Continuar al Pago</button>
-    </div>
 
-</div>
+
+        <div class="offcanvas-body">
+            <p class="texto-pie text-center mt-4">No tienes productos en el carrito.</p>
+        </div>
+
+
+        <div class="offcanvas-footer p-3 border-top border-secondary">
+            <div class="d-flex justify-content-between mb-3 text-white">
+                <span>Total estimado:</span>
+                <strong class="texto-neon-verde">$0</strong>
+            </div>
+            <button class="btn boton-buscar-neon w-100 py-2">Continuar al Pago</button>
+        </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>

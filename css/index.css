@@ -1,3 +1,4 @@
+/* === seccion Ofertas Especiales */
 .botonAgregar{
     background-color: transparent;
     color: #39FF14;
@@ -8,4 +9,36 @@
     background-color: #39FF14;
     color: #212529;
 
+}
+
+/*=== seccion Nosotros */
+
+.titulo-nosotros {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.subtitulo-nosotros {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+}
+
+
+.texto-nosotros {
+    color: #D3D3D3;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+
+.tarjeta-mision-vision {
+    background-color: #212529; 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.2s ease;
+}
+
+.tarjeta-mision-vision:hover {
+    border-color: #39FF14;
 }
