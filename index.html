@@ -51,12 +51,6 @@
                         <li class="nav-item">
                             <a class="nav-link active enlace-menu" aria-current="page" href="#">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link enlace-menu" href="#">Juegos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link enlace-menu" href="Comunidad.html">Comunidad</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle enlace-menu" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,6 +59,7 @@
                             <ul class="dropdown-menu caja-desplegable">
                                 <li><a class="dropdown-item item-desplegable" href="#">Juegos de Mesa</a></li>
                                 <li><a class="dropdown-item item-desplegable" href="#">Accesorios</a></li>
+                                <li><a class="dropdown-item item-desplegable" href="#">Consola/Computadores</a></li>
                                 <li><a class="dropdown-item item-desplegable" href="#">Perisfericos</a></li>
                                 <li><a class="dropdown-item item-desplegable" href="#">Vestuario</a></li>
                                 <li>
@@ -72,6 +67,15 @@
                                 </li>
                                 <li><a class="dropdown-item item-desplegable" href="#">Ver todos</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="Comunidad.html">Comunidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link enlace-menu" href="#">Administrador</a>
                         </li>
                     </ul>
 
@@ -108,42 +112,20 @@
 
     <main class="flex-grow-1 contenedor-principal">
         <!-- ==== SECCION OFERTAS ESPECIALES ==== -->
-        <section id="sec-ofertas"></section>
-        <div class="row gy-4 " id="contenedor-ofertas">
-            <!-- cartas creadas en js -->
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <section id="sec-ofertas" class="py-5">
+            <div class="container">
+        
+                <h2 class="mb-4 text-white text-uppercase" style="font-family: 'Orbitron', sans-serif;">
+                    OFERTAS ESPECIALES <span class="texto-neon-verde">• Top Drops</span>
+                </h2>
+        
+                <!-- La fila DEBE vivir dentro del container -->
+                <div class="row g-4" id="contenedor-ofertas">
+                    <!-- cartas creadas en js -->
+                </div>
+        
+            </div>
+        </section>
 
 
 
@@ -153,7 +135,7 @@
             <div class="container">
                 <div class="row align-items-center g-5">
 
-                    <!-- Columna Izquierda: Información de la tienda -->
+
                     <div class="col-12 col-lg-6">
                         <span class="badge text-bg-dark border border-success mb-2 px-3 py-2 texto-neon-verde fw-bold">
                             100% ONLINE • TODO CHILE
@@ -171,7 +153,7 @@
                             ergonomía directo a tu setup.
                         </p>
 
-                        <!-- Puntos clave con iconos -->
+
                         <ul class="list-unstyled mt-4 d-flex flex-column gap-3">
                             <li class="d-flex align-items-center gap-3">
                                 <i class="bi bi-truck fs-4 texto-neon-verde"></i>
@@ -188,11 +170,11 @@
                         </ul>
                     </div>
 
-                    <!-- Columna Derecha: Tarjetas de Misión y Visión -->
+
                     <div class="col-12 col-lg-6">
                         <div class="d-flex flex-column gap-4">
 
-                            <!-- Tarjeta Misión -->
+
                             <div class="tarjeta-mision-vision p-4 rounded border-secondary">
                                 <div class="d-flex align-items-center gap-3 mb-2">
                                     <i class="bi bi-bullseye fs-3 texto-neon-verde"></i>
@@ -205,7 +187,6 @@
                                 </p>
                             </div>
 
-                            <!-- Tarjeta Visión -->
                             <div class="tarjeta-mision-vision p-4 rounded border-secondary">
                                 <div class="d-flex align-items-center gap-3 mb-2">
                                     <i class="bi bi-trophy fs-3 texto-neon-verde"></i>
@@ -232,61 +213,78 @@
     <!-- ==== FOOTER ==== -->
     <!-- ================================================================ -->
     <footer class="pie-pagina-gamer py-5 mt-auto" data-bs-theme="dark">
-        <div class="container">
-            <div class="row gy-4">
+    <div class="container">
+        <div class="row gy-4">
 
+  
+            <div class="col-12 col-md-4">
+                <h5 class="logo-texto-sitio mb-3">Level-Up Gamer</h5>
+                <p class="texto-pie mb-2">
+                    Tu tienda online de tecnología, consolas y accesorios en Chile. Despachos a todo el país.
+                </p>
+                <span class="badge text-bg-dark border border-secondary text-white">100% Online</span>
+            </div>
 
-                <div class="col-12 col-md-4">
-                    <h5 class="logo-texto-sitio mb-3">MiWebGamer</h5>
-                    <p class="texto-pie">
-                        Tu portal de videojuegos, torneos y noticias de la comunidad gamer.
-                    </p>
-                </div>
+            <div class="col-12 col-md-4">
+                <h6 class="titulo-pie mb-3">Navegación</h6>
+                <ul class="nav flex-column gap-2">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link p-0 enlace-pie">
+                            <i class="bi bi-chevron-right text-success me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sec-ofertas" class="nav-link p-0 enlace-pie">
+                            <i class="bi bi-chevron-right text-success me-1"></i>Ofertas Destacadas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#nosotros" class="nav-link p-0 enlace-pie">
+                            <i class="bi bi-chevron-right text-success me-1"></i>Sobre Nosotros
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-
-                <div class="col-6 col-md-2">
-                    <h6 class="titulo-pie mb-3">Navegación</h6>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 enlace-pie">Inicio</a></li>
-                        <li class="nav-item mb-2"><a href="juegos.html" class="nav-link p-0 enlace-pie">Juegos</a></li>
-                        <li class="nav-item mb-2"><a href="comunidad.html" class="nav-link p-0 enlace-pie">Comunidad</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="col-6 col-md-2">
-                    <h6 class="titulo-pie mb-3">Soporte</h6>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 enlace-pie">Preguntas Frecuentes</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 enlace-pie">Términos</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 enlace-pie">Privacidad</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="col-12 col-md-4">
-                    <h6 class="titulo-pie mb-3">Únete a la comunidad</h6>
-                    <p class="texto-pie">Entérate de las últimas novedades y eventos.</p>
-                    <a class="nav-link enlace-menu enlace-login" href="registroUsuario.html">Registrarse</a>
+            <div class="col-12 col-md-4">
+                <h6 class="titulo-pie mb-3">Síguenos en Redes</h6>
+                <p class="texto-pie mb-3">Conéctate a nuestra comunidad y entérate de nuevos drops.</p>
+                
+                <!-- Iconos de Redes Sociales -->
+                <div class="d-flex gap-3 fs-4 mb-4">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="enlace-pie" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="enlace-pie" aria-label="Discord">
+                        <i class="bi bi-discord"></i>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="enlace-pie" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer" class="enlace-pie" aria-label="Twitch">
+                        <i class="bi bi-twitch"></i>
+                    </a>
                 </div>
 
             </div>
 
-            <!-- Línea divisoria y copyright -->
-            <hr class="linea-divisoria my-4">
-            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                <p class="mb-0 texto-pie">&copy; 2026 MiWebGamer. Todos los derechos reservados.</p>
-                <span class="texto-pie">Hecho para gamers</span>
-            </div>
         </div>
-    </footer>
 
+        <hr class="linea-divisoria my-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <p class="mb-0 texto-pie">&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</p>
+            <span class="texto-pie small">Hecho para la comunidad gamer</span>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- ================================================================ -->
+    <!-- ==== OFFCANVAS PARA VISUALIZAR EL CARRITO ==== -->
+    <!-- ================================================================ -->
     <div class="offcanvas offcanvas-end panel-carrito-gamer" tabindex="-1" id="carritoCompras"
         aria-labelledby="carritoLabel">
 
-        
         <div class="offcanvas-header border-bottom border-secondary">
             <h5 class="offcanvas-title titulo-carrito" id="carritoLabel">
                 <i class="bi bi-cart3 me-2"></i>Tu Carrito
@@ -295,18 +293,25 @@
                 aria-label="Close"></button>
         </div>
 
-
-        <div class="offcanvas-body">
+        <!-- Agregado id="contenedor-items-carrito" -->
+        <div class="offcanvas-body" id="contenedor-items-carrito">
             <p class="texto-pie text-center mt-4">No tienes productos en el carrito.</p>
         </div>
-
 
         <div class="offcanvas-footer p-3 border-top border-secondary">
             <div class="d-flex justify-content-between mb-3 text-white">
                 <span>Total estimado:</span>
-                <strong class="texto-neon-verde">$0</strong>
+                <!-- Agregado id="total-carrito" -->
+                <strong class="texto-neon-verde" id="total-carrito">$0</strong>
             </div>
-            <button class="btn boton-buscar-neon w-100 py-2">Continuar al Pago</button>
+            
+            <div class="d-flex flex-column gap-2">
+                <button class="btn boton-buscar-neon w-100 py-2">Continuar al Pago</button>
+                <!-- Botón para limpiar -->
+                <button class="btn btn-sm btn-outline-danger w-100" id="btn-limpiar-carrito">
+                    <i class="bi bi-trash3 me-1"></i>Vaciar Carrito
+                </button>
+            </div>
         </div>
 
     </div>
