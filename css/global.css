@@ -1,9 +1,7 @@
 /* ===================================================
    HOJA DE ESTILOS GLOBAL (global.css)
-   Paleta: Fondo #000000 | Acento #39FF14 | Texto #FFFFFF / #D3D3D3
    =================================================== */
 
-/* 1. Base y Estructura General */
 html, body {
     height: 100%;
     margin: 0;
