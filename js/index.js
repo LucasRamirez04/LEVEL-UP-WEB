@@ -192,3 +192,4 @@ ofertasEspeciales.forEach((producto) => {
     col.appendChild(card);
     contenedor.appendChild(col);
 });
+
