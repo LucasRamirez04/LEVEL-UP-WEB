@@ -1,0 +1,30 @@
+/* Pestañas inactivas */
+/* Color del texto inactivo */
+.nav-tabs .nav-link.pestana-gamer {
+    color: #a0a0a0;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+/* Hover */
+.nav-tabs .nav-link.pestana-gamer:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Pestaña seleccionada */
+.nav-tabs .nav-link.pestana-gamer.active {
+    color: #39FF14 !important;
+    background-color: #212529 !important;
+    border-color: #39FF14 #39FF14 transparent #39FF14 !important;
+}
+
+#sec-dashboard,
+#sec-reglasNegocio {
+    scroll-margin-top: 110px; /* Compensa la altura del navbar fijo */
+}
+
+/* Opcional: desplazamiento suave al hacer clic en enlaces del footer */
+html {
+    scroll-behavior: smooth;
+}
