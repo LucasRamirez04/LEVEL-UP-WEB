@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVEL UP - CATÁLOGO</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/catalogo.css">
@@ -22,7 +24,9 @@
         <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
             <div class="container-fluid">
 
-                <a class="navbar-brand logo-texto-sitio" href="index.html">MiWebGamer</a>
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/LOGO.png" alt="Logo Level-Up Gamer" class="logo-navbar">
+                </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -44,32 +48,38 @@
                         <li class="nav-item">
                             <a class="nav-link enlace-menu" href="contacto.html">Contacto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Administrador</a>
+                        </li>
                     </ul>
 
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <button class="btn nav-link enlace-menu" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#carritoOffcanvas" aria-controls="carritoOffcanvas">
-                                🛒 Carrito
-                            </button>
-                        </li>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                         <li class="nav-item">
                             <a class="nav-link enlace-menu enlace-login" href="login.html">Iniciar Sesión</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link enlace-menu enlace-login" href="registro.html">Registrarse</a>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link enlace-menu enlace-login" href="registroUsuario.html">Registrarse</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <button class="btn boton-carrito-nav d-flex align-items-center gap-2" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#carritoCompras"
+                                aria-controls="carritoCompras">
+                                <i class="bi bi-cart3"></i>
+                                <span>Carrito</span>
+                                <span class="badge badge-contador" id="contador-carrito">0</span>
+                            </button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header> 
+    </header>
     //FIN HEADER
 
     <!-- //MAIN CLASS CONTENEDOR -->
-    <main class="contenedor-catalogo">
+    <main class="flex-grow-1 contenedor-principal">
 
-        <section id="filtros-catalogo">
+        <section id="filtros-catalogo" class="container py-4">
             <h1 class="titulo-catalogo">Catálogo de Productos</h1>
 
             <div class="fila-filtros">
@@ -79,18 +89,132 @@
                     <option value="Juegos de Mesa">Juegos de Mesa</option>
                     <option value="Accesorios">Accesorios</option>
                     <option value="Consolas/Computadores">Consolas/Computadores</option>
-                    <option value="Perifericos">Perifericos</option>
+                    <option value="Perifericos">Periféricos</option>
                     <option value="Vestuario">Vestuario</option>
                 </select>
             </div>
         </section>
 
-        <section id="grid-productos" class="grid-productos">
-            <!-- Las tarjetas de producto se generan dinámicamente desde catalogo.js -->
+        <section id="grid-productos" class="grid-productos container pb-5">
         </section>
 
     </main>
     <!-- // FIN MAIN CLASS CONTENEDOR -->
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modalDetalleProducto" tabindex="-1" aria-labelledby="modalDetalleProductoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-detalle-producto">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDetalleProductoLabel">Nombre del producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="" id="detalle-imagen" class="imagen-detalle-producto">
+                    <p id="detalle-categoria" class="texto-secundario"></p>
+                    <p id="detalle-precio" class="precio-detalle"></p>
+                    <p id="detalle-descripcion" class="texto-secundario"></p>
+
+                    <div class="selector-cantidad">
+                        <label for="detalle-cantidad" class="form-label">Cantidad</label>
+                        <input type="number" id="detalle-cantidad" class="form-control" value="1" min="1" max="99">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="detalle-btn-agregar" class="btn boton-agregar-carrito">Añadir al
+                        carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL -->
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina-gamer py-5 mt-auto" data-bs-theme="dark">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-12 col-md-4">
+                    <h5 class="logo-texto-sitio mb-3">Level-Up Gamer</h5>
+                    <p class="texto-pie mb-2">
+                        Tu tienda online de tecnología, consolas y accesorios en Chile. Despachos a todo el país.
+                    </p>
+                    <span class="badge text-bg-dark border border-secondary text-white">100% Online</span>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h6 class="titulo-pie mb-3">Navegación</h6>
+                    <ul class="nav flex-column gap-2">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link p-0 enlace-pie">
+                                <i class="bi bi-chevron-right text-success me-1"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="catalogo.html" class="nav-link p-0 enlace-pie">
+                                <i class="bi bi-chevron-right text-success me-1"></i>Catálogo
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Principal-Comunidad.html" class="nav-link p-0 enlace-pie">
+                                <i class="bi bi-chevron-right text-success me-1"></i>Comunidad
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h6 class="titulo-pie mb-3">Contacto</h6>
+                    <p class="texto-pie mb-3">¿Dudas sobre algún producto? Escríbenos.</p>
+                    <a href="contacto.html" class="nav-link enlace-menu enlace-login">Ir a Contacto</a>
+                </div>
+
+            </div>
+
+            <hr class="linea-divisoria my-4">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <p class="mb-0 texto-pie">&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</p>
+                <span class="texto-pie small">Hecho para la comunidad gamer</span>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN FOOTER -->
+
+    <!-- OFFCANVAS CARRITO -->
+     <div class="offcanvas offcanvas-end panel-carrito-gamer" tabindex="-1" id="carritoCompras"
+        aria-labelledby="carritoLabel">
+
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title titulo-carrito" id="carritoLabel">
+                <i class="bi bi-cart3 me-2"></i>Tu Carrito
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+
+        <!-- catalogo.js dibuja aquí un bloque por cada producto agregado -->
+        <div class="offcanvas-body" id="contenedor-items-carrito">
+            <p class="texto-pie text-center mt-4">No tienes productos en el carrito.</p>
+        </div>
+
+        <div class="offcanvas-footer p-3 border-top border-secondary">
+            <div class="d-flex justify-content-between mb-3 text-white">
+                <span>Total estimado:</span>
+                <strong class="texto-neon-verde" id="total-carrito">$0</strong>
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+                <button class="btn boton-buscar-neon w-100 py-2">Continuar al Pago</button>
+                <button class="btn btn-sm btn-outline-danger w-100" id="btn-limpiar-carrito">
+                    <i class="bi bi-trash3 me-1"></i>Vaciar Carrito
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <!-- FIN OFFCANVAS CARRITO -->
 
 
     <!-- //SCRIPTS JS -->
