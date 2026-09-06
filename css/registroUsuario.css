@@ -1,0 +1,48 @@
+/* 1. Tarjeta principal del formulario */
+.contenedor-formulario {
+    background-color: #0d0d0d;
+    border: 1px solid #1E90FF; 
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.15);
+}
+
+.form-control, 
+.form-select {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.form-control::placeholder {
+    color: #888888;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    background-color: #222222;
+    color: #FFFFFF;
+    border-color: #39FF14; 
+    box-shadow: none;
+}
+
+.form-select option {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+}
+
+#formularioRegistro .btn-primary {
+    background-color: #1E90FF; 
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+#formularioRegistro .btn-primary:hover {
+    background-color: #39FF14; 
+    color: #000000;
+}

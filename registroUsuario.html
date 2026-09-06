@@ -19,7 +19,7 @@
 
 <body>
     <!-- NAVDAR DE LA PAGINA -->
-    <header>class="cabecera-principal">
+    <header class="cabecera-principal">
         <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
             <div class="container-fluid">
 
@@ -57,7 +57,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link enlace-menu" href="Comunidad.html">Comunidad</a>
+                            <a class="nav-link enlace-menu" href="Principal-Comunidad.html">Comunidad</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link enlace-menu" href="#">Contacto</a>
@@ -70,15 +70,16 @@
             </div>
         </nav>
     </header>
-    <main class="container my-5 pt-5 mt-5">
+    <main class="container contenedor-principal mb-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6">
-                <h2 class="text-center text-white" style="font-family: 'Orbitron', sans-serif;"> REGISTRO DE USUARIO
+
+            <div class="col-12 col-md-10 col-lg-8 contenedor-formulario">
+                <h2 class="text-center text-white mb-4" style="font-family: 'Orbitron', sans-serif;"> REGISTRO DE USUARIO
                 </h2>
-    
+
                 <!-- REGISTRO DE USUARIO -->
                 <form id="formularioRegistro" novalidate>
-    
+
                     <div class="mb-3">
                         <label for="run" class="form-label">RUT</label>
                         <input type="text" class="form-control" id="run" placeholder="Ingrese su RUT sin punto ni guion"
@@ -108,12 +109,12 @@
                             <input type="password" class="form-control" id="confirmPassword" required>
                         </div>
                     </div>
-    
+
                     <div class="mb-3">
                         <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
                         <input type="date" class="form-control" id="fechaNacimiento">
                     </div>
-    
+
                     <div class="row mb-3">
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="region" class="form-label">Región</label>
@@ -128,17 +129,18 @@
                             </select>
                         </div>
                     </div>
-    
+
                     <div class="mb-4">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion"
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección"
                             required>
                     </div>
-    
+
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary" style="font-family: 'Orbitron', sans-serif;">Registrar Cuenta</button>
+                        <button type="submit" class="btn btn-primary"
+                            style="font-family: 'Orbitron', sans-serif;">Registrar Cuenta</button>
                     </div>
-    
+
                 </form>
             </div>
         </div>
