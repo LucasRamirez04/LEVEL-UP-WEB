@@ -375,9 +375,6 @@ function configurarBotonVaciar() {
 }
 
 
-// =========================================
-// 7. INICIO: se ejecuta apenas carga la página
-// =========================================
 
 // Cada vez que el usuario cambia la categoría del filtro, se vuelve a dibujar el grid
 document.getElementById("filtro-categoria").addEventListener("change", aplicarFiltro);
