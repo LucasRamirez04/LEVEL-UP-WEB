@@ -1,8 +1,6 @@
 // ==========================================================
-// 1. INICIALIZACIÓN DE DATOS (localStorage)
+// 1. INICIALIZACIÓN DE LOCALSTORAGE
 // ==========================================================
-
-// Si no hay usuarios de prueba creados, agregamos uno inicial
 if (!localStorage.getItem("usuarios")) {
     const usuarioAdmin = [
         {
@@ -17,7 +15,7 @@ if (!localStorage.getItem("usuarios")) {
 }
 
 // ==========================================================
-// 2. KPIS DEL DASHBOARD
+// 2. DASHBOARD / KPIS
 // ==========================================================
 function actualizarDashboard() {
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
@@ -33,260 +31,200 @@ function actualizarDashboard() {
 }
 
 // ==========================================================
-// 3. CRUD DE PRODUCTOS
+// 3. CRUD PRODUCTOS
 // ==========================================================
-const tablaProdCuerpo = document.getElementById("tabla-cuerpo-productos");
 const formProd = document.getElementById("formProducto");
-const modalProdElemento = document.getElementById("modalProducto");
-const modalProdInstancia = new bootstrap.Modal(modalProdElemento);
+const tablaProdCuerpo = document.getElementById("tabla-cuerpo-productos");
+const inputProdIndex = document.getElementById("prod-index-edicion");
+const tituloProdForm = document.getElementById("form-prod-titulo");
+const btnGuardarProd = document.getElementById("btn-guardar-prod");
+const btnCancelarProd = document.getElementById("btn-cancelar-prod");
 
-function renderizarTablaProductos() {
+function renderizarProductos() {
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
     tablaProdCuerpo.innerHTML = "";
 
     productos.forEach((prod, index) => {
         const tr = document.createElement("tr");
 
-        // Código
-        const tdCod = document.createElement("td");
-        tdCod.className = "fw-bold text-success";
-        tdCod.textContent = prod.codigo;
+        const spanOferta = prod.enOferta 
+            ? `<span class="badge bg-success text-dark">-${prod.descuento}%</span>` 
+            : `<span class="badge bg-secondary">No</span>`;
 
-        // Imagen miniatura
-        const tdImg = document.createElement("td");
-        const miniatura = document.createElement("img");
-        miniatura.src = prod.imagen || "img/catan.jpg";
-        miniatura.style.width = "40px";
-        miniatura.style.height = "40px";
-        miniatura.style.objectFit = "cover";
-        miniatura.className = "rounded border border-secondary";
-        tdImg.appendChild(miniatura);
-
-        // Nombre
-        const tdNom = document.createElement("td");
-        tdNom.textContent = prod.nombre;
-
-        // Categoría
-        const tdCat = document.createElement("td");
-        tdCat.textContent = prod.categoria;
-
-        // Precio
-        const tdPre = document.createElement("td");
-        tdPre.textContent = `$${Number(prod.precio).toLocaleString("es-CL")}`;
-
-        // Oferta
-        const tdOfe = document.createElement("td");
-        const spanOfe = document.createElement("span");
-        if (prod.enOferta) {
-            spanOfe.className = "badge bg-success text-dark";
-            spanOfe.textContent = `-${prod.descuento}%`;
-        } else {
-            spanOfe.className = "badge bg-secondary";
-            spanOfe.textContent = "No";
-        }
-        tdOfe.appendChild(spanOfe);
-
-        // Acciones (Editar y Eliminar)
-        const tdAcc = document.createElement("td");
-        tdAcc.className = "text-end";
-
-        const btnEdit = document.createElement("button");
-        btnEdit.className = "btn btn-sm btn-outline-warning me-2";
-        btnEdit.innerHTML = '<i class="bi bi-pencil"></i>';
-        btnEdit.addEventListener("click", () => cargarProductoParaEditar(index));
-
-        const btnBorrar = document.createElement("button");
-        btnBorrar.className = "btn btn-sm btn-outline-danger";
-        btnBorrar.innerHTML = '<i class="bi bi-trash"></i>';
-        btnBorrar.addEventListener("click", () => eliminarProducto(index));
-
-        tdAcc.appendChild(btnEdit);
-        tdAcc.appendChild(btnBorrar);
-
-        tr.appendChild(tdCod);
-        tr.appendChild(tdImg);
-        tr.appendChild(tdNom);
-        tr.appendChild(tdCat);
-        tr.appendChild(tdPre);
-        tr.appendChild(tdOfe);
-        tr.appendChild(tdAcc);
-
+        tr.innerHTML = `
+            <td class="fw-bold text-success">${prod.codigo}</td>
+            <td>${prod.nombre}</td>
+            <td>${prod.categoria}</td>
+            <td>$${Number(prod.precio).toLocaleString("es-CL")}</td>
+            <td>${prod.stock}</td>
+            <td>${spanOferta}</td>
+            <td class="text-end">
+                <button class="btn btn-sm btn-outline-warning me-1" onclick="editarProducto(${index})">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="eliminarProducto(${index})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        `;
         tablaProdCuerpo.appendChild(tr);
     });
 
     actualizarDashboard();
 }
 
-function eliminarProducto(index) {
-    if (confirm("¿Estás seguro de eliminar este producto?")) {
-        const productos = JSON.parse(localStorage.getItem("productos")) || [];
-        productos.splice(index, 1); // Quita el elemento del arreglo
-        localStorage.setItem("productos", JSON.stringify(productos));
-        renderizarTablaProductos();
-    }
-}
-
-function cargarProductoParaEditar(index) {
+function editarProducto(index) {
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
     const prod = productos[index];
 
-    document.getElementById("tituloModalProd").textContent = "Editar Producto";
-    document.getElementById("prod-index-edicion").value = index;
+    inputProdIndex.value = index;
     document.getElementById("prod-codigo").value = prod.codigo;
     document.getElementById("prod-nombre").value = prod.nombre;
     document.getElementById("prod-categoria").value = prod.categoria;
     document.getElementById("prod-precio").value = prod.precio;
+    document.getElementById("prod-stock").value = prod.stock;
     document.getElementById("prod-descuento").value = prod.descuento || 0;
-    document.getElementById("prod-imagen").value = prod.imagen || "";
     document.getElementById("prod-enOferta").checked = prod.enOferta;
+    document.getElementById("prod-imagen").value = prod.imagen || "";
 
-    modalProdInstancia.show();
+    tituloProdForm.innerHTML = '<i class="bi bi-pencil-square me-2"></i>Editar Producto';
+    btnGuardarProd.textContent = "Actualizar";
+    btnGuardarProd.className = "btn btn-sm btn-warning flex-grow-1";
+    btnCancelarProd.classList.remove("d-none");
 }
 
-// Limpiar modal al cerrarse o abrirse como "Nuevo"
-modalProdElemento.addEventListener("hidden.bs.modal", () => {
+function resetearFormularioProd() {
     formProd.reset();
-    document.getElementById("prod-index-edicion").value = "-1";
-    document.getElementById("tituloModalProd").textContent = "Nuevo Producto";
-});
+    inputProdIndex.value = "-1";
+    tituloProdForm.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Nuevo Producto';
+    btnGuardarProd.textContent = "Guardar";
+    btnGuardarProd.className = "btn btn-sm btn-success flex-grow-1";
+    btnCancelarProd.classList.add("d-none");
+}
 
-// Guardar (Agregar o Editar)
+btnCancelarProd.addEventListener("click", resetearFormularioProd);
+
 formProd.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const index = parseInt(document.getElementById("prod-index-edicion").value);
+    const index = parseInt(inputProdIndex.value);
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-    const nuevoProd = {
+    const datosProd = {
         codigo: document.getElementById("prod-codigo").value.trim(),
         nombre: document.getElementById("prod-nombre").value.trim(),
         categoria: document.getElementById("prod-categoria").value,
         precio: parseFloat(document.getElementById("prod-precio").value),
+        stock: parseInt(document.getElementById("prod-stock").value),
         descuento: parseInt(document.getElementById("prod-descuento").value) || 0,
-        imagen: document.getElementById("prod-imagen").value.trim() || "img/catan.jpg",
-        enOferta: document.getElementById("prod-enOferta").checked
+        enOferta: document.getElementById("prod-enOferta").checked,
+        imagen: document.getElementById("prod-imagen").value.trim() || "img/catan.jpg"
     };
 
     if (index === -1) {
-        // AGREGAR
-        productos.push(nuevoProd);
+        productos.push(datosProd);
     } else {
-        // EDITAR
-        productos[index] = nuevoProd;
+        productos[index] = datosProd;
     }
 
     localStorage.setItem("productos", JSON.stringify(productos));
-    modalProdInstancia.hide();
-    renderizarTablaProductos();
+    resetearFormularioProd();
+    renderizarProductos();
 });
 
-// ==========================================================
-// 4. CRUD DE USUARIOS
-// ==========================================================
-const tablaUserCuerpo = document.getElementById("tabla-cuerpo-usuarios");
-const formUser = document.getElementById("formUsuario");
-const modalUserElemento = document.getElementById("modalUsuario");
-const modalUserInstancia = new bootstrap.Modal(modalUserElemento);
+function eliminarProducto(index) {
+    if (confirm("¿Deseas eliminar este producto?")) {
+        const productos = JSON.parse(localStorage.getItem("productos")) || [];
+        productos.splice(index, 1);
+        localStorage.setItem("productos", JSON.stringify(productos));
+        renderizarProductos();
+    }
+}
 
-function renderizarTablaUsuarios() {
+// ==========================================================
+// 4. CRUD USUARIOS
+// ==========================================================
+const formUser = document.getElementById("formUsuario");
+const tablaUserCuerpo = document.getElementById("tabla-cuerpo-usuarios");
+const inputUserIndex = document.getElementById("user-index-edicion");
+const tituloUserForm = document.getElementById("form-user-titulo");
+const btnGuardarUser = document.getElementById("btn-guardar-user");
+const btnCancelarUser = document.getElementById("btn-cancelar-user");
+
+function renderizarUsuarios() {
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     tablaUserCuerpo.innerHTML = "";
 
     usuarios.forEach((usr, index) => {
         const tr = document.createElement("tr");
+        const badgeRol = usr.rol === "Administrador" 
+            ? '<span class="badge bg-success">Administrador</span>' 
+            : `<span class="badge bg-info text-dark">${usr.rol}</span>`;
 
-        // Nombre y Apellidos
-        const tdNom = document.createElement("td");
-        tdNom.textContent = `${usr.nombre} ${usr.apellidos}`;
-
-        // Correo
-        const tdCor = document.createElement("td");
-        tdCor.textContent = usr.correo;
-
-        // Rol
-        const tdRol = document.createElement("td");
-        const spanRol = document.createElement("span");
-        spanRol.className = usr.rol === "Administrador" ? "badge bg-success" : "badge bg-info text-dark";
-        spanRol.textContent = usr.rol;
-        tdRol.appendChild(spanRol);
-
-        // Acciones
-        const tdAcc = document.createElement("td");
-        tdAcc.className = "text-end";
-
-        const btnEdit = document.createElement("button");
-        btnEdit.className = "btn btn-sm btn-outline-warning me-2";
-        btnEdit.innerHTML = '<i class="bi bi-pencil"></i>';
-        btnEdit.addEventListener("click", () => cargarUsuarioParaEditar(index));
-
-        const btnBorrar = document.createElement("button");
-        btnBorrar.className = "btn btn-sm btn-outline-danger";
-        btnBorrar.innerHTML = '<i class="bi bi-trash"></i>';
-        btnBorrar.addEventListener("click", () => eliminarUsuario(index));
-
-        tdAcc.appendChild(btnEdit);
-        tdAcc.appendChild(btnBorrar);
-
-        tr.appendChild(tdNom);
-        tr.appendChild(tdCor);
-        tr.appendChild(tdRol);
-        tr.appendChild(tdAcc);
-
+        tr.innerHTML = `
+            <td class="fw-bold">${usr.run}</td>
+            <td>${usr.nombre} ${usr.apellidos}</td>
+            <td>${usr.correo}</td>
+            <td>${badgeRol}</td>
+            <td class="text-end">
+                <button class="btn btn-sm btn-outline-warning me-1" onclick="editarUsuario(${index})">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="eliminarUsuario(${index})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        `;
         tablaUserCuerpo.appendChild(tr);
     });
 
     actualizarDashboard();
 }
 
-function eliminarUsuario(index) {
-    if (confirm("¿Deseas eliminar este usuario?")) {
-        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        usuarios.splice(index, 1);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        renderizarTablaUsuarios();
-    }
-}
-
-function cargarUsuarioParaEditar(index) {
+function editarUsuario(index) {
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     const usr = usuarios[index];
 
-    document.getElementById("tituloModalUser").textContent = "Editar Usuario";
-    document.getElementById("user-index-edicion").value = index;
+    inputUserIndex.value = index;
     document.getElementById("user-run").value = usr.run;
     document.getElementById("user-nombre").value = usr.nombre;
     document.getElementById("user-apellidos").value = usr.apellidos;
     document.getElementById("user-correo").value = usr.correo;
     document.getElementById("user-rol").value = usr.rol;
 
-    modalUserInstancia.show();
+    tituloUserForm.innerHTML = '<i class="bi bi-pencil-square me-2"></i>Editar Usuario';
+    btnGuardarUser.textContent = "Actualizar";
+    btnGuardarUser.className = "btn btn-sm btn-warning flex-grow-1";
+    btnCancelarUser.classList.remove("d-none");
 }
 
-modalUserElemento.addEventListener("hidden.bs.modal", () => {
+function resetearFormularioUser() {
     formUser.reset();
-    document.getElementById("user-index-edicion").value = "-1";
-    document.getElementById("tituloModalUser").textContent = "Nuevo Usuario";
-});
+    inputUserIndex.value = "-1";
+    tituloUserForm.innerHTML = '<i class="bi bi-person-plus me-2"></i>Nuevo Usuario';
+    btnGuardarUser.textContent = "Guardar";
+    btnGuardarUser.className = "btn btn-sm btn-info text-white flex-grow-1";
+    btnCancelarUser.classList.add("d-none");
+}
 
-// Guardar Usuario
+btnCancelarUser.addEventListener("click", resetearFormularioUser);
+
 formUser.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const index = parseInt(document.getElementById("user-index-edicion").value);
     const correo = document.getElementById("user-correo").value.trim().toLowerCase();
-
-    // Validación de dominio de correo solicitada en reglas
     const dominiosValidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
     const correoValido = dominiosValidos.some(dom => correo.endsWith(dom));
 
     if (!correoValido) {
-        alert("El correo debe pertenecer a @duoc.cl, @profesor.duoc.cl o @gmail.com");
+        alert("El correo debe terminar en @duoc.cl, @profesor.duoc.cl o @gmail.com");
         return;
     }
 
+    const index = parseInt(inputUserIndex.value);
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    const nuevoUsuario = {
+    const datosUsuario = {
         run: document.getElementById("user-run").value.trim(),
         nombre: document.getElementById("user-nombre").value.trim(),
         apellidos: document.getElementById("user-apellidos").value.trim(),
@@ -295,18 +233,25 @@ formUser.addEventListener("submit", (e) => {
     };
 
     if (index === -1) {
-        usuarios.push(nuevoUsuario);
+        usuarios.push(datosUsuario);
     } else {
-        usuarios[index] = nuevoUsuario;
+        usuarios[index] = datosUsuario;
     }
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    modalUserInstancia.hide();
-    renderizarTablaUsuarios();
+    resetearFormularioUser();
+    renderizarUsuarios();
 });
 
-// ==========================================================
-// 5. LLAMADOS INICIALES
-// ==========================================================
-renderizarTablaProductos();
-renderizarTablaUsuarios();
+function eliminarUsuario(index) {
+    if (confirm("¿Deseas eliminar este usuario?")) {
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios.splice(index, 1);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        renderizarUsuarios();
+    }
+}
+
+// Carga inicial
+renderizarProductos();
+renderizarUsuarios();
