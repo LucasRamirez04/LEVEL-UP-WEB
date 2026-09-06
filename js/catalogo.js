@@ -17,7 +17,7 @@ const inventarioProductos = [
         precio: 24990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/carcassonne.png"
+        imagen: "img/carcassonne.jpg"
     },
     {
         codigo: "AC001",
@@ -35,7 +35,7 @@ const inventarioProductos = [
         precio: 79990,
         enOferta: false,
         descuento: 20,
-        imagen: "img/audifonos-hyperx.png"
+        imagen: "img/audifonos-hyperx.jpg"
     },
     {
         codigo: "CO001",
@@ -44,7 +44,7 @@ const inventarioProductos = [
         precio: 549990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/play5.png"
+        imagen: "img/play5.jpg"
     },
     {
         codigo: "CO002",
@@ -62,7 +62,7 @@ const inventarioProductos = [
         precio: 349990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/silla-gamer.png"
+        imagen: "img/silla-gamer.jpg"
     },
     {
         codigo: "PE002",
@@ -71,7 +71,7 @@ const inventarioProductos = [
         precio: 49990,
         enOferta: true,
         descuento: 5,
-        imagen: "img/g502.png"
+        imagen: "img/g502.webp"
     },
     {
         codigo: "PE003",
@@ -80,7 +80,7 @@ const inventarioProductos = [
         precio: 29990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/mousepad.png"
+        imagen: "img/mousepad.webp"
     },
     {
         codigo: "VE001",
