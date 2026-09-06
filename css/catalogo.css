@@ -1,7 +1,8 @@
 .titulo-catalogo {
     font-family: 'Orbitron', sans-serif;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .texto-secundario {
