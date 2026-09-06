@@ -62,7 +62,7 @@ const inventarioProductos = [
         precio: 349990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/silla-gamer.jpg"
+        imagen: "img/sillagamer3.jpg"
     },
     {
         codigo: "PE002",
