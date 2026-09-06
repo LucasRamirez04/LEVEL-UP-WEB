@@ -4,7 +4,7 @@
 if (!localStorage.getItem("usuarios")) {
     const usuarioAdmin = [
         {
-            run: "212888192",
+            run: "19011022K",
             nombre: "Lucas",
             apellidos: "Administrador",
             correo: "admin@duoc.cl",
