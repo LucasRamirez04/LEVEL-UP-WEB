@@ -20,7 +20,7 @@ const inventarioProductos = [
         stock : 2,
         enOferta: false,
         descuento: 0,
-        imagen: "img/carcassonne.png"
+        imagen: "img/carcassonne.jpg"
     },
     {
         codigo: "AC001",
@@ -40,7 +40,7 @@ const inventarioProductos = [
         stock : 2,
         enOferta: false,
         descuento: 20,
-        imagen: "img/audifonos-hyperx.png"
+        imagen: "img/audifonos-hyperx.jpg"
     },
     {
         codigo: "CO001",
@@ -50,7 +50,7 @@ const inventarioProductos = [
         stock : 4,
         enOferta: false,
         descuento: 0,
-        imagen: "img/play5.png"
+        imagen: "img/play5.jpg"
     },
     {
         codigo: "CO002",
@@ -70,7 +70,7 @@ const inventarioProductos = [
         stock : 5,
         enOferta: false,
         descuento: 0,
-        imagen: "img/silla-gamer.png"
+        imagen: "img/sillagamer3.jpg"
     },
     {
         codigo: "PE002",
@@ -80,7 +80,7 @@ const inventarioProductos = [
         stock : 5,
         enOferta: true,
         descuento: 5,
-        imagen: "img/g502.png"
+        imagen: "img/g502.webp"
     },
     {
         codigo: "PE003",
@@ -90,7 +90,7 @@ const inventarioProductos = [
         stock : 10,
         enOferta: false,
         descuento: 0,
-        imagen: "img/mousepad.png"
+        imagen: "img/mousepad.webp"
     },
     {
         codigo: "VE001",
@@ -109,9 +109,6 @@ if (!localStorage.getItem("productos")) {
     localStorage.setItem("productos", JSON.stringify(inventarioProductos));
 }
 
-// ==========================================
-// FILTRAR MEJORES OFERTAS
-// ==========================================
 
 // ==========================================
 // FILTRAR MEJORES OFERTAS
