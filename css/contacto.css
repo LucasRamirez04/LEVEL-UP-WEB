@@ -1,0 +1,97 @@
+
+.texto-secundario {
+    color: #D3D3D3;
+}
+
+/* --- Layout de dos columnas --- */
+
+.fila-contacto {
+    display: flex;
+    /* flex-wrap permite que las columnas se apilen solas en pantallas
+       angostas, sin necesitar una media query aparte para esto */
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.columna-datos-empresa {
+    /* flex: 1 hace que ambas columnas repartan el espacio disponible
+       en partes iguales cuando hay espacio suficiente */
+    flex: 1 1 320px;
+}
+
+.columna-formulario {
+    flex: 1 1 400px;
+}
+
+/* --- Columna de datos de la empresa --- */
+
+.logo-contacto {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.nombre-empresa {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.lista-datos-contacto {
+    margin-top: 25px;
+    color: #D3D3D3;
+}
+
+.lista-datos-contacto li {
+    margin-bottom: 10px;
+}
+
+/* --- Formulario --- */
+
+.titulo-formulario {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Bootstrap pinta los inputs con fondo blanco por defecto;
+   se sobreescribe aquí para que calcen con el tema oscuro del sitio */
+#form-contacto .form-control {
+    background-color: #0d0d0d;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* :focus se activa cuando el usuario hace click en el campo;
+   hay que repetir fondo/color porque Bootstrap los resetea a blanco */
+#form-contacto .form-control:focus {
+    background-color: #0d0d0d;
+    color: #FFFFFF;
+    border-color: #39FF14;
+    box-shadow: 0 0 0 0.2rem rgba(57, 255, 20, 0.25);
+}
+
+/* .is-valid / .is-invalid las agrega contacto.js según el resultado
+   de la validación en tiempo real de cada campo */
+#form-contacto .form-control.is-valid {
+    border-color: #39FF14;
+}
+
+#form-contacto .form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.boton-enviar-contacto {
+    background-color: transparent;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+    font-weight: 500;
+}
+
+.boton-enviar-contacto:hover {
+    background-color: #39FF14;
+    color: #000000;
+}
