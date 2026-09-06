@@ -62,7 +62,7 @@ const inventarioProductos = [
         precio: 349990,
         enOferta: false,
         descuento: 0,
-        imagen: "img/silla-gamer.jpg"
+        imagen: "img/sillagamer3.jpg"
     },
     {
         codigo: "PE002",
@@ -133,6 +133,14 @@ function renderizarProductos(lista) {
         imagen.src = producto.imagen;
         imagen.alt = producto.nombre;
 
+        // Insignia de descuento flotante
+        const badge = document.createElement("span");
+        badge.className = "badge position-absolute top-0 end-0 m-2 px-2 py-1";
+        badge.style.backgroundColor = "#39FF14";
+        badge.style.color = "#000000";
+        badge.style.fontWeight = "bold";
+        badge.textContent = `-${producto.descuento}% OFF`;
+
         // Nombre del producto
         const nombre = document.createElement("p");
         nombre.className = "nombre-producto";
@@ -169,6 +177,7 @@ function renderizarProductos(lista) {
         tarjeta.appendChild(nombre);
         tarjeta.appendChild(precio);
         tarjeta.appendChild(botonAgregar);
+        tarjeta.appendChild(badge);
 
         grid.appendChild(tarjeta);
     });
