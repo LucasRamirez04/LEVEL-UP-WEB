@@ -8,7 +8,9 @@ if (!localStorage.getItem("usuarios")) {
             nombre: "Lucas",
             apellidos: "Administrador",
             correo: "admin@duoc.cl",
-            rol: "Administrador"
+            rol: "Administrador",
+            clave : "1234",
+            direccion : "campeonodromo35"
         }
     ];
     localStorage.setItem("usuarios", JSON.stringify(usuarioAdmin));

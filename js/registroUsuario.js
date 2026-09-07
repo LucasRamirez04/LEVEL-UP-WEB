@@ -137,18 +137,21 @@ formulario.addEventListener("submit", function (evento) {
     }
 
     let cuentaNueva = {
-        correoElectronico: correo,
+        run : run,
+        nombre: nombre,
+        apellidos : apellidos,
+        correo: correo,
+        rol : "Cliente",
         clave: contraseña,
-        nombreUsuario: nombre,
-        direccion: direccion
+        direccion: direccion,
     };
 
     /* ALMACENAMIENTO DE USUARIOS EN EL STORAGE */
-    let listaUsuarios = JSON.parse(localStorage.getItem("Usuarios")) || [];
+    let listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     listaUsuarios.push(cuentaNueva);
 
-    localStorage.setItem("Usuarios", JSON.stringify(listaUsuarios));
+    localStorage.setItem("usuarios", JSON.stringify(listaUsuarios));
 
     alert("¡Registro exitoso!");
 

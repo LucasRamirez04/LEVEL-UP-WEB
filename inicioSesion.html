@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEVEL UP - REGISTRO DE USUARIO</title>
+    <title>LEVEL UP - INICIAR SESIÓN</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/registroUsuario.css">
-
+    <link rel="stylesheet" href="css/inicioSesion.css">
 </head>
 
 <body>
@@ -33,7 +32,6 @@
                     <img src="img/LOGO.png" alt="Logo Level-Up Gamer" class="logo-navbar">
                 </a>
 
-
                 <!-- Botón para celulares -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,29 +39,28 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active enlace-menu" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link enlace-menu" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link enlace-menu" href="catalogo.html">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  enlace-menu" href="Principal-Comunidad.html">Comunidad</a>
+                            <a class="nav-link enlace-menu" href="Principal-Comunidad.html">Comunidad</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link enlace-menu" href="contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link enlace-menu" href="administrador.html" id="">Administrador</a>
+                            <a class="nav-link enlace-menu" href="administrador.html" id="link-nav-admin">Administrador</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                         <li class="nav-item" id="btn-iniciar">
-                            <a class="nav-link enlace-menu enlace-login" href="inicioSesion.html">Iniciar Sesión</a>
+                            <a class="nav-link active enlace-menu enlace-login" aria-current="page" href="inicioSesion.html">Iniciar Sesión</a>
                         </li>
                         <li class="nav-item ms-2" id="bt-registrar">
                             <a class="nav-link enlace-menu enlace-login" href="registroUsuario.html">Registrarse</a>
@@ -80,73 +77,48 @@
     <main class="container contenedor-principal mb-5">
         <div class="row justify-content-center mt-4">
 
-            <div class="col-12 col-md-10 col-lg-8 contenedor-formulario">
-                <h2 class="text-center text-white mb-4" style="font-family: 'Orbitron', sans-serif;"> REGISTRO DE
-                    USUARIO
+            <!-- Caja centrada más angosta (col-md-8 col-lg-5) para que no se vea estirado -->
+            <div class="col-12 col-md-8 col-lg-5 contenedor-formulario">
+                <h2 class="text-center text-white mb-4" style="font-family: 'Orbitron', sans-serif;">
+                    INICIAR SESIÓN
                 </h2>
 
-                <!-- REGISTRO DE USUARIO -->
-                <form id="formularioRegistro" novalidate>
+                <!-- FORMULARIO DE INICIO DE SESIÓN -->
+                <form id="formularioLogin" novalidate>
 
                     <div class="mb-3">
-                        <label for="run" class="form-label">RUN</label>
-                        <input type="text" class="form-control" id="run" placeholder="Ingrese su RUN sin punto ni guion"
-                            required>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label for="apellidos" class="form-label">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidos" required>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="correo" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="correo" placeholder="Ej: usuario@.cl/com" required>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="contraseña" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" id="confirmarContraseña" required>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacimiento">
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
-                            <label for="region" class="form-label">Región</label>
-                            <select class="form-select" id="region" required>
-                                <option value="" selected>-- Seleccione la Región --</option>
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label for="comuna" class="form-label">Comuna</label>
-                            <select class="form-select" id="comuna" required>
-                                <option value="" selected>-- Seleccione la Comuna --</option>
-                            </select>
+                        <label for="correoLogin" class="form-label text-light">Correo Electrónico</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-secondary border-secondary">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="email" class="form-control" id="correo" 
+                                placeholder="Ej: usuario@duoc.cl" required>
                         </div>
                     </div>
 
                     <div class="mb-4">
-                        <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección"
-                            required>
+                        <label for="contrasenaLogin" class="form-label text-light">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-secondary border-secondary">
+                                <i class="bi bi-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" id="contraseña" 
+                                placeholder="Ingrese su contraseña" required>
+                        </div>
                     </div>
 
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary"
-                            style="font-family: 'Orbitron', sans-serif;">Registrar Cuenta</button>
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="submit" class="btn btn-primary" style="font-family: 'Orbitron', sans-serif;">
+                            Ingresar
+                        </button>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-secondary small mb-0">
+                            ¿No tienes una cuenta? 
+                            <a href="registroUsuario.html" class="text-success text-decoration-none fw-bold">Regístrate aquí</a>
+                        </p>
                     </div>
 
                 </form>
@@ -154,11 +126,9 @@
         </div>
     </main>
 
-
     <!-- ================================================================ -->
     <!-- ==== FOOTER ==== -->
     <!-- ================================================================ -->
-
     <footer class="pie-pagina-gamer py-5 mt-auto" data-bs-theme="dark">
         <div class="container">
             <div class="row gy-4">
@@ -168,24 +138,23 @@
                     <p class="texto-pie mb-2">
                         Tu tienda online de tecnología, consolas y accesorios en Chile. Despachos a todo el país.
                     </p>
-
                 </div>
 
                 <div class="col-12 col-md-4">
                     <h6 class="titulo-pie mb-3">Navegación</h6>
                     <ul class="nav flex-column gap-2">
                         <li class="nav-item">
-                            <a href="#" class="nav-link p-0 enlace-pie">
+                            <a href="index.html" class="nav-link p-0 enlace-pie">
                                 <i class="bi bi-chevron-right text-success me-1"></i>Inicio
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#sec-ofertas" class="nav-link p-0 enlace-pie">
+                            <a href="index.html#sec-ofertas" class="nav-link p-0 enlace-pie">
                                 <i class="bi bi-chevron-right text-success me-1"></i>Ofertas Destacadas
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#nosotros" class="nav-link p-0 enlace-pie">
+                            <a href="index.html#nosotros" class="nav-link p-0 enlace-pie">
                                 <i class="bi bi-chevron-right text-success me-1"></i>Sobre Nosotros
                             </a>
                         </li>
@@ -215,7 +184,6 @@
                             <i class="bi bi-twitch"></i>
                         </a>
                     </div>
-
                 </div>
 
             </div>
@@ -227,8 +195,9 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/registroUsuario.js"></script>
+    <script src="js/inicioSesion.js"></script>
 </body>
 
 </html>
