@@ -1,4 +1,8 @@
-/* 1. Tarjeta principal del formulario */
+/* ================================================================ */
+/* ==== ESTILOS DE INICIO DE SESIÓN ==== */
+/* ================================================================ */
+
+
 .contenedor-formulario {
     background-color: #0d0d0d;
     border: 1px solid #1E90FF; 
@@ -7,8 +11,8 @@
     box-shadow: 0 0 15px rgba(30, 144, 255, 0.15);
 }
 
-.form-control, 
-.form-select {
+
+.form-control {
     background-color: #1a1a1a;
     color: #FFFFFF;
     border: 1px solid #333333;
@@ -19,20 +23,28 @@
     color: #888888;
 }
 
-.form-control:focus, 
-.form-select:focus {
+.form-control:focus {
     background-color: #222222;
     color: #FFFFFF;
     border-color: #39FF14; 
     box-shadow: none;
 }
 
-.form-select option {
+
+.input-group-text {
     background-color: #1a1a1a;
-    color: #FFFFFF;
+    border: 1px solid #333333;
+    color: #888888;
 }
 
-#formularioRegistro .btn-primary {
+
+.input-group:focus-within .input-group-text {
+    border-color: #39FF14;
+    color: #39FF14;
+}
+
+
+#formularioLogin .btn-primary {
     background-color: #1E90FF; 
     border: none;
     color: #FFFFFF;
@@ -42,7 +54,8 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-#formularioRegistro .btn-primary:hover {
+#formularioLogin .btn-primary:hover {
     background-color: #39FF14; 
     color: #000000;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
 }

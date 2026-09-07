@@ -22,63 +22,63 @@
     <header class="cabecera-principal">
         <nav class="navbar navbar-expand-lg fixed-top barra-navegacion-gamer" data-bs-theme="dark">
             <div class="container-fluid">
+
+                <!-- Logo -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="img/LOGO.png" alt="Logo Level-Up Gamer" class="logo-navbar">
                 </a>
 
+
+                <!-- Botón para celulares -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link enlace-menu" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle enlace-menu" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Productos
-                            </a>
-                            <ul class="dropdown-menu caja-desplegable">
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html?categoria=juegos de Mesa">Juegos de Mesa</a></li>
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html?categoria=Accesorios">Accesorios</a></li>
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html?categoria=Consolas/Computadores">Consolas/Computadores</a></li>
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html?categoria=Perifericos">Perifericos</a></li>
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html?categoria=Vestuario">Vestuario</a></li>
-                                <li><hr class="dropdown-divider linea-divisoria"></li>
-                                <li><a class="dropdown-item item-desplegable" href="catalogo.html">Ver todos</a></li>
-                            </ul>
+                            <a class="nav-link  enlace-menu"  href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link enlace-menu" href="Principal-Comunidad.html">Comunidad</a>
+                            <a class="nav-link enlace-menu" href="catalogo.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  enlace-menu" href="Principal-Comunidad.html">Comunidad</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link enlace-menu" href="contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active enlace-menu" aria-current="page" href="#">Administrador</a>
+                            <a class="nav-link active enlace-menu" href="administrador.html"  id="">Administrador</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                        <li class="nav-item">
+                        <li class="nav-item" id="btn-iniciar">
                             <a class="nav-link enlace-menu enlace-login" href="inicioSesion.html">Iniciar Sesión</a>
                         </li>
-                        <li class="nav-item ms-2">
+                        <li class="nav-item ms-2" id="bt-registrar">
                             <a class="nav-link enlace-menu enlace-login" href="registroUsuario.html">Registrarse</a>
+                        </li>
+                        <li class="nav-item d-none align-items-center gap-2" id="nav-usuario-activo">
+                            <span class="text-white small" id="nav-nombre-usuario"></span>
+                            <button class="btn btn-sm btn-outline-danger py-0" id="btn-cerrar-sesion" type="button">Salir</button>
                         </li>
                         <li class="nav-item ms-3">
                             <button class="btn boton-carrito-nav d-flex align-items-center gap-2" type="button"
-                                data-bs-toggle="offcanvas" data-bs-target="#carritoCompras" aria-controls="carritoCompras">
+                                data-bs-toggle="offcanvas" data-bs-target="#carritoCompras"
+                                aria-controls="carritoCompras">
                                 <i class="bi bi-cart3"></i>
                                 <span>Carrito</span>
                                 <span class="badge badge-contador">0</span>
                             </button>
                         </li>
                     </ul>
+
+
                 </div>
             </div>
         </nav>
